@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#18232f">
+<title>CraftLink | Quản trị &amp; Kiểm duyệt</title>
+<style>
+:root{font:14px Inter,"Segoe UI",Arial,sans-serif;color:#f5f6f7;background:#f6f5f2}
+*{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100vh}
+.icons{position:absolute;width:0;height:0;overflow:hidden}.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sidebar{position:fixed;inset:0 auto 0 0;z-index:2;display:flex;flex-direction:column;width:258px;padding:25px 18px 16px;background:#18232f;color:#f7f7f5}
+.brand{display:flex;align-items:center;gap:11px;padding:3px 8px 29px;color:#fff;text-decoration:none;font:700 27px Georgia,serif;letter-spacing:-.7px}.brand-mark{display:grid;place-items:center;width:35px;height:35px;border-radius:11px 11px 11px 4px;background:#d9663e;font:700 21px Georgia,serif}
+.label{padding:0 11px 10px;color:#96a0aa;font-size:10px;font-weight:700;letter-spacing:1.2px}.nav{display:grid;gap:5px}.nav button{display:flex;align-items:center;gap:12px;min-height:46px;padding:0 12px;border:0;border-radius:9px;background:transparent;color:#dbe0e4;text-align:left;cursor:pointer}.nav button:hover{background:#ffffff12;color:#fff}.nav button.active{background:linear-gradient(100deg,#d9663e,#c9502e);color:#fff;box-shadow:0 5px 16px #cf5c3633}.nav-icon{flex:none;color:#aab4bd}.nav button.active .nav-icon{color:#fff}.section-label{padding-top:18px}
+.spacer{flex:1;min-height:20px}.status{display:flex;align-items:center;gap:9px;padding:12px 10px 17px;margin-bottom:9px;border-bottom:1px solid #ffffff1a;color:#b4bec6;font-size:11px}.dot{width:8px;height:8px;border-radius:50%;background:#73c287;box-shadow:0 0 0 4px #73c28720}.user{display:flex;align-items:center;gap:10px;padding:9px 3px 3px}.user img{width:38px;height:38px;border-radius:50%;object-fit:cover}.user b,.user small{display:block}.user b{font-size:12px}.user small{margin-top:4px;color:#9ea9b2;font-size:10px}
+.workspace{height:100vh;margin-left:258px}.screen{display:block;width:100%;height:100%;border:0;background:#f6f5f2}
+@media(max-width:700px){.sidebar{position:static;width:auto;padding:12px}.brand{padding:3px 8px 12px}.label{padding:8px 8px 5px}.nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}.nav button{justify-content:center;min-height:40px;padding:4px;font-size:10px;text-align:center}.nav-icon{display:none}.section-label{grid-column:1/-1}.spacer,.status,.user{display:none}.workspace{height:calc(100vh - 202px);margin:0}}
+</style>
+</head>
+<body>
+<svg class="icons" aria-hidden="true">
+<symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></symbol>
+<symbol id="folder" viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><path d="M3.5 9h17"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M17 11a3.5 3.5 0 1 0-1.2-6.8M17 14.5h1a3 3 0 0 1 3 3V20"/></symbol>
+<symbol id="box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="M3 8v9l9 5 9-5V8M12 13v9"/></symbol>
+<symbol id="alert" viewBox="0 0 24 24"><path d="M10.3 4.2 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4m0 4h.01"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></symbol>
+</svg>
+<aside class="sidebar">
+  <a class="brand" href="GopTrang.html"><span class="brand-mark">C</span><span>CraftLink</span></a>
+  <div class="label">KHU VỰC QUẢN TRỊ</div>
+  <nav class="nav" id="nav" aria-label="Điều hướng trang">
+    <button class="active" type="button" data-page="dashboard"><svg class="icon nav-icon"><use href="#grid"/></svg>Bảng điều khiển</button>
+    <button type="button" data-page="categories"><svg class="icon nav-icon"><use href="#folder"/></svg>Quản lý danh mục</button>
+    <button type="button" data-page="users"><svg class="icon nav-icon"><use href="#users"/></svg>Quản lý tài khoản</button>
+    <div class="label section-label">KIỂM DUYỆT</div>
+    <button type="button" data-page="queue"><svg class="icon nav-icon"><use href="#box"/></svg>Hàng đợi kiểm duyệt</button>
+    <button type="button" data-page="reports"><svg class="icon nav-icon"><use href="#alert"/></svg>Trung tâm báo cáo</button>
+    <button type="button" data-page="rules"><svg class="icon nav-icon"><use href="#shield"/></svg>Quy định nội dung</button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="status"><span class="dot"></span>Hệ thống đang ổn định</div>
+  <div class="user"><img id="roleAvatar" src="assets/admin-sidebar-avatar.png" alt=""><span><b id="roleName">Quản trị viên Admin</b><small id="roleTitle">Quản trị hệ thống</small></span></div>
+</aside>
+<main class="workspace"><iframe class="screen" id="screen" title="Giao diện CraftLink" src="01-dashboard/index.html"></iframe></main>
+<script>
+const pages={dashboard:"01-dashboard",categories:"02-category-management",users:"03-user-management",queue:"04-moderation-queue",reports:"05-report-center",rules:"06-content-guidelines"};
+const nav=document.getElementById("nav"),screen=document.getElementById("screen");
+function show(key){
+  if(!pages[key])key="dashboard";
+  nav.querySelectorAll("[data-page]").forEach(button=>{
+    const active=button.dataset.page===key;
+    button.classList.toggle("active",active);
+    if(active)button.setAttribute("aria-current","page");else button.removeAttribute("aria-current");
+  });
+  const moderator=["queue","reports","rules"].includes(key);
+  document.getElementById("roleName").textContent=moderator?"Kiểm duyệt viên":"Quản trị viên Admin";
+  document.getElementById("roleTitle").textContent=moderator?"Kiểm duyệt nội dung":"Quản trị hệ thống";
+  document.getElementById("roleAvatar").src=moderator?"assets/moderator-avatar.jpg":"assets/admin-sidebar-avatar.png";
+  screen.src=pages[key]+"/index.html";
+  history.replaceState(null,"","#"+key);
+}
+nav.addEventListener("click",event=>{
+  const button=event.target.closest("[data-page]");
+  if(button)show(button.dataset.page);
+});
+screen.addEventListener("load",()=>{
+  try{
+    const doc=screen.contentDocument,style=doc.createElement("style");
+    style.textContent="aside.sidebar{display:none!important}.app{width:auto!important;margin:0!important}";
+    doc.head.append(style);
+  }catch{}
+});
+show(location.hash.slice(1));
+</script>
+</body>
+</html>
