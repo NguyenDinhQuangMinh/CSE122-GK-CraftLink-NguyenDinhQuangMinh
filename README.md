@@ -35,6 +35,6 @@ Mở file `KiemDuyetVaQuanTri/02-category-management/index.html` bằng trình d
 
 ## Liên kết
 
-- **Thiết kế tham khảo trên Canva:** [CraftLink trên Canva](https://www.canva.com/design/DAHXD2jg9HU/7Q4trg1HDT246iMdGVyUXw/edit)
+- **Thiết kế tham khảo trên Canva:** [CraftLink trên Canva](https://www.canva.com/design/DAHW9oiY-JA/SOGYdjcaglvT8vRFINwhyA/edit)
 - **Video giới thiệu:** Chưa cập nhật — thêm link video sau khi tải lên.
 - **GitHub:** [CSE122-GK-CraftLink-NguyenDinhQuangMinh](https://github.com/NguyenDinhQuangMinh/CSE122-GK-CraftLink-NguyenDinhQuangMinh)
